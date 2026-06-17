@@ -1,3 +1,22 @@
+# Für das Modul
+
+Die finale Datenbank ist [final_fingerprints.surql](final_fingerprints.surql).
+
+Jegliche begehbaren Flächen (abgesehen von hinter dem C-Bau) wurden gemessen.
+
+Die Messung wurde wie folgt durchgeführt:
+Der Grundriss wurde in 5x6 Zellen aufgeteilt. In jeder Zelle wurde das Handy möglichst in die Mitte bewegt und anschließend dem Bild folgend nach oben/unten/links/rechts ausgerichtet (also nicht unbedingt Nord/Süd/Ost/West).
+Für jede Richtung wurden 4 aufeinanderfolgende Messungen vorgenommen.
+Falls Messungen exakt gleich waren (z.B. wegen Scan Throttling) oder irgendwie fehlschlugen wurden die Daten für diese Zelle in der Richtung komplett weggeschmissen und eine weitere Messung wurde durchgeführt.
+
+Netzwerke wurden wie folgt gefiltert:
+- IN-foo SSID erlaubt
+- eduroam SSID erlaubt
+- `*HFU*` wurde groß/kleinschreibunabhängig erlaubt
+- die Daten aller anderen vorhandenen Netze wurden aus den Daten gefiltert und sind somit nicht im Datensatz vorhanden
+
+
+
 # WCN Fingerprinting
 
 Rust + Tauri 2 + SurrealDB Android app for Wi-Fi fingerprint capture on the `WLAN_AP_in-EG_C-Bau.jpg` floorplan.
