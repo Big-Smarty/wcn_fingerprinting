@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/src/styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WCN Fingerprinting</title>
+    <script type="module" src="/src/main.ts" defer></script>
+  </head>
+
+  <body>
+    <main class="app-shell">
+      <section class="map-panel" aria-label="Floorplan grid">
+        <div class="plan-frame">
+          <img id="floorplan" alt="WCN floorplan" />
+          <div id="grid" class="grid-overlay" aria-label="Selectable cells"></div>
+        </div>
+      </section>
+
+      <aside class="control-panel" aria-label="Fingerprint controls">
+        <header>
+          <p class="eyebrow">WCN</p>
+          <h1>Fingerprinting</h1>
+        </header>
+
+        <div class="status-grid">
+          <div>
+            <span>Cell</span>
+            <strong id="selected-cell">-</strong>
+          </div>
+          <div>
+            <span>Facing</span>
+            <strong id="selected-orientation">-</strong>
+          </div>
+        </div>
+
+        <div class="orientation-group" aria-label="Orientation">
+          <button class="orientation-button" type="button" data-orientation="u">U</button>
+          <button class="orientation-button" type="button" data-orientation="d">D</button>
+          <button class="orientation-button" type="button" data-orientation="l">L</button>
+          <button class="orientation-button" type="button" data-orientation="r">R</button>
+        </div>
+
+        <button id="start-button" class="primary-action" type="button" disabled>
+          Start fingerprinting
+        </button>
+        <button id="backup-button" class="secondary-action" type="button">
+          Save DB backup
+        </button>
+
+        <div id="message" class="message" role="status" aria-live="polite"></div>
+      </aside>
+    </main>
+  </body>
+</html>
