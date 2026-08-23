@@ -2,18 +2,15 @@
 
 Die finale Datenbank ist [final_fingerprints.surql](final_fingerprints.surql).
 
-Jegliche begehbaren Flächen (abgesehen von hinter dem C-Bau) wurden gemessen.
+Gemessen wurden alle begehbaren Flächen mit Ausnahme des Bereichs hinter dem C-Bau.
 
-Die Messung wurde wie folgt durchgeführt:
-Der Grundriss wurde in 5x6 Zellen aufgeteilt. In jeder Zelle wurde das Handy möglichst in die Mitte bewegt und anschließend dem Bild folgend nach oben/unten/links/rechts ausgerichtet (also nicht unbedingt Nord/Süd/Ost/West).
-Für jede Richtung wurden 4 aufeinanderfolgende Messungen vorgenommen.
-Falls Messungen exakt gleich waren (z.B. wegen Scan Throttling) oder irgendwie fehlschlugen wurden die Daten für diese Zelle in der Richtung komplett weggeschmissen und eine weitere Messung wurde durchgeführt.
+Die Messung lief wie folgt ab: Der Grundriss wurde in ein 5x6-Raster aufgeteilt. In jeder Zelle wurde das Handy möglichst mittig platziert und anschließend entlang der Bildachsen nach oben, unten, links oder rechts ausgerichtet (also nicht zwingend nach Nord, Süd, Ost oder West). Für jede Ausrichtung wurden vier aufeinanderfolgende Messungen durchgeführt. Waren Messungen identisch (etwa wegen Scan Throttling) oder schlugen sie fehl, wurden die Daten dieser Zelle in dieser Ausrichtung verworfen und eine weitere Messung durchgeführt.
 
-Netzwerke wurden wie folgt gefiltert:
-- IN-foo SSID erlaubt
-- eduroam SSID erlaubt
-- `*HFU*` wurde groß/kleinschreibunabhängig erlaubt
-- die Daten aller anderen vorhandenen Netze wurden aus den Daten gefiltert und sind somit nicht im Datensatz vorhanden
+Gefiltert wurden die Netzwerke wie folgt:
+- SSID `IN-foo` erlaubt
+- SSID `eduroam` erlaubt
+- SSIDs, die `hfu` enthalten, erlaubt (unabhängig von Groß-/Kleinschreibung)
+- Daten aller übrigen Netze wurden entfernt und sind nicht im Datensatz enthalten
 
 
 
